@@ -1,11 +1,11 @@
 'use strict';
 
-angular.module('PaycoinRpiWallet')
-    .controller('OptionsCtrl', function ($scope, $rootScope, paycoind) {
+angular.module('TrustRpiWallet')
+    .controller('OptionsCtrl', function ($scope, $rootScope, TrustPlusd) {
         $rootScope.app.curTitle = "Options";
 
         $scope.addserver = function(){
-            paycoind.addserver($scope.newserver)
+            TrustPlusd.addserver($scope.newserver)
                 .then(function(response){
                     console.log(response);
                 });
