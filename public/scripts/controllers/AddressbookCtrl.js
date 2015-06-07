@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('PaycoinRpiWallet')
+angular.module('TrustRpiWallet')
     .controller('AddressbookCtrl', function ($scope, $rootScope, $http) {
         $rootScope.app.curTitle = "Address Book";
 
