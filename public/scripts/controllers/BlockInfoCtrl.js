@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('PaycoinRpiWallet')
+angular.module('TrustRpiWallet')
     .controller('BlockInfoCtrl', function ($scope, $rootScope, paycoind) {
         $rootScope.app.curTitle = "Block Info";
 
