@@ -1,11 +1,11 @@
 'use strict';
 
-angular.module('PaycoinRpiWallet')
-    .controller('ReceiveCtrl', function ($scope, $rootScope, $localStorage, paycoind) {
+angular.module('TrustRpiWallet')
+    .controller('ReceiveCtrl', function ($scope, $rootScope, $localStorage, TrustPlusd) {
         $rootScope.app.curTitle = "Receive";
 
         $scope.listaccounts = function() {
-            paycoind.listAccounts()
+            TrustPlusd.listAccounts()
                 .then(function (response) {
                     $scope.accounts = response;
                     $localStorage.accounts = response;
@@ -13,7 +13,7 @@ angular.module('PaycoinRpiWallet')
         };
 
         $scope.newReceiveAddress = function(label){
-            paycoind.getNewAddress(label)
+            TrustPlusd.getNewAddress(label)
                 .then(function(response){
                     console.log(response);
                     $scope.listaccounts();
