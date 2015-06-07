@@ -1,16 +1,16 @@
 {
     "addressBookOutgoing": [
         {
-            "label": "qt1",
+            "label": "DonateBoXHoc",
             "address": "PBJK7wqszSVanowDWw3RcAN5YbuQZXMMSM"
         },
         {
-            "label": "qt2",
-            "address": "PD2brsDYcymdfj8Lx39i7CqMsNLVCCD4Vs"
+            "label": "DonateTrustDev",
+            "address": "THuGeekfpA17JsT12RsJqEKDTDCZWe2VSs"
         },
         {
-            "label": "qt3",
-            "address": "PD2brsDYcymdfj8Lx39i7CqMsNLVCCD4Vs"
+            "label": "DonateTrustStakers",
+            "address": "TUcZaJHSDyTudMfkLvs6Kbzbj2RSvkmGdj"
         }
     ],
     "addressBookIncoming": [],
