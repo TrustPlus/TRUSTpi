@@ -1,10 +1,10 @@
 [
   {
     "name": "local-qt",
-    "coin": "xpy",
+    "coin": "trust",
     "server": "localhost",
     "rpcuser": "bitcoinrpc",
     "rpcpassword": "randomPasswordHere",
-    "rpcport": "8999"
+    "rpcport": "36998"
   }
 ]
