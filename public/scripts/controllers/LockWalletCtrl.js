@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('PaycoinRpiWallet')
+angular.module('TrustRpiWallet')
     .controller('LockWalletCtrl', function ($scope, $rootScope, $localStorage, paycoind) {
         $rootScope.app.curTitle = "Lock Wallet";
 
