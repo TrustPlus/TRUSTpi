@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('TrustRpiWallet')
-    .controller('LockWalletCtrl', function ($scope, $rootScope, $localStorage, paycoind) {
+    .controller('LockWalletCtrl', function ($scope, $rootScope, $localStorage, TrustPlusd) {
         $rootScope.app.curTitle = "Lock Wallet";
 
         $scope.walletLock = function() {
@@ -9,7 +9,7 @@ angular.module('TrustRpiWallet')
             $localStorage.chosenServer.locked = true;
             $localStorage.chosenServer.stakingOnly = false;
 
-            paycoind.walletLock()
+            TrustPlusd.walletLock()
                 .then(function (response) {
                     console.log(response);
                     $scope.response = response.data;
