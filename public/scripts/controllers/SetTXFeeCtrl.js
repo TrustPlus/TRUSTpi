@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('PaycoinRpiWallet')
+angular.module('TrustRpiWallet')
     .controller('SetTXFeeCtrl', function ($scope, $rootScope) {
         $rootScope.app.curTitle = "Set TX Fee";
     }
