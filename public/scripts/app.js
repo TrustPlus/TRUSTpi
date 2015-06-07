@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('PaycoinRpiWallet', [
+angular.module('TrustRpiWallet', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
@@ -121,35 +121,35 @@ angular.module('PaycoinRpiWallet', [
                 templateUrl: 'views/console.html'
             })
   })
-    .controller('MainCtrl', function ($scope, $rootScope, $localStorage, paycoind) {
+    .controller('MainCtrl', function ($scope, $rootScope, $localStorage, TrustPlusd) {
 
-        paycoind.getServerInfo()
+        TrustPlusd.getServerInfo()
             .then(function(response){
                 $localStorage.serverList = response;
                 $scope.serverList = response;
             });
 
         $scope.changeServer = function(index){
-            paycoind.setServerIndex(index);
+            TrustPlusd.setServerIndex(index);
             $localStorage.chosenServer = $localStorage.serverList[index];
             $localStorage.chosenServerIndex = index;
 
             $scope.chosenServer = $localStorage.serverList[index];
-            paycoind.getInfo()
+            TrustPlusd.getInfo()
                 .then(function (response) {
                     $rootScope.getInfo = response;
                 }
             );
-            paycoind.listTransactions()
+            TrustPlusd.listTransactions()
                 .then(function(response){
                     $rootScope.listTransactions = response;
                 });
         };
 
         if($localStorage.chosenServerIndex) {
-            paycoind.setServerIndex($localStorage.chosenServerIndex);
+            TrustPlusd.setServerIndex($localStorage.chosenServerIndex);
         } else {
-            paycoind.setServerIndex(0);
+            TrustPlusd.setServerIndex(0);
         }
 
         $localStorage.chosenServer = $localStorage.serverList[0];
@@ -158,13 +158,13 @@ angular.module('PaycoinRpiWallet', [
         $localStorage.app = $rootScope.app;
 
         $scope.refreshInfo = function() {
-            paycoind.getInfo()
+            TrustPlusd.getInfo()
                 .then(function (response) {
                     $rootScope.getInfo = response;
                 }
             );
             console.log("recentTransactions ");
-            paycoind.listTransactions(10)
+            TrustPlusd.listTransactions(10)
                 .then(function(response){
                     $rootScope.listTransactions = response;
                 });
