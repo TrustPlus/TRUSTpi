@@ -1,4 +1,4 @@
-# TRUSTpi - Please use caution, we have rebranded the pages and cannot confirm functionality.  Use a fresh Trust Wallet with very little coins it it.
+# TRUSTpi - Please use caution, we have rebranded the pages and cannot confirm functionality.  Use a fresh Trust Wallet with very little coins in it.
 
 Raspberry PI TRUST Web Wallet
 
