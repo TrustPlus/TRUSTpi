@@ -1,5 +1,6 @@
-# RaspPaycoin
-Raspberry PI Paycoin Web Wallet
+# TRUSTpi
+Raspberry PI TRUST Web Wallet
+Created by BoXHocK  `https://github.com/BoXHocK`
 
 ## Prerequisites
 
@@ -43,8 +44,8 @@ Note: 15.04 seems to be pretty new and nodejs is not built for it yet. If you ge
 ## Setup
 
 Clone this repository
-`git clone https://github.com/tvl83/RaspPaycoin <directory>`.
-The `<directory>` is optional if you do not want the default folder name of `RaspPaycoin`.
+`git clone https://github.com/TrustPlus/TRUSTpi <directory>`.
+The `<directory>` is optional if you do not want the default folder name of `TRUSTpi`.
 
 In the root directory of the project run `npm install` and `sudo npm install bower -g`. Let everything install, then `cd public` and run `bower install`.
 
@@ -52,9 +53,9 @@ In the root directory of the project run `npm install` and `sudo npm install bow
 
 Rename the `/config/config.changeme.json` to `config.json` with `mv config.changeme.json config.json`
  
-Within the `config.json` change the rpcuser, rpcpassword, and rpcport to what ever is set in your `paycoin.conf`.
+Within the `config.json` change the rpcuser, rpcpassword, and rpcport to what ever is set in your `TrustPlus.conf`.
 
-The `paycoin.conf` that is on the raspberryPi is configured with the default settings so you wont have to do anything. On any other system you need to set it to the correct parameters.
+The `TrustPlus.conf` that is on the raspberryPi is configured with the default settings so you wont have to do anything. On any other system you need to set it to the correct parameters.
 
 ## Run the server
 
@@ -70,6 +71,8 @@ The views are just a free bootstrap admin panel ([SB Bootstrap 2](http://startbo
 This project is supported by the community. 
 
 BTC: `1Q2ZEQcMftL6tGKVXWNobwTZDFVDQx2aGM`
+
+TRUST: ``
 
 XPY: `PURNbr88icJ7YX47o6jrdWSh7PQzfrKWrk`
 
