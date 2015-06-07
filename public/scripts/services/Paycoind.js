@@ -1,10 +1,10 @@
-angular.module('PaycoinRpiWallet')
-    .factory('paycoind', function($http, $q) {
+angular.module('TrustRpiWallet')
+    .factory('TrustPlusd', function($http, $q) {
         var service = {
             checkWallet: checkWallet,
             decodeRawTransaction: decodeRawTransaction, // <hex string>
-            dumpPrivKey: dumpPrivKey, // <paycoinaddress>
-            getAccount: getAccount, // <paycoinaddress>
+            dumpPrivKey: dumpPrivKey, // <trustaddress>
+            getAccount: getAccount, // <trustaddress>
             getAccountAddress: getAccountAddress,
             getAddressesByAccount: getAddressesByAccount,
             getBlock: getBlock, // <hash> [txinfo] [txdetails]
@@ -25,12 +25,12 @@ angular.module('PaycoinRpiWallet')
             getRawMemPool: getRawMemPool,
             getRawTransaction: getRawTransaction, // <txid> [verbose=0]
             getReceivedByAccount: getReceivedByAccount, // <account> [minconf=1]
-            getReceivedByAddress: getReceivedByAddress, // <paycoinaddress> [minconf=1]
+            getReceivedByAddress: getReceivedByAddress, // <trustaddress> [minconf=1]
             getTransaction: getTransaction,
             getTxOut: getTxOut, // "txid" n (includemempool)
             getWork: getWork, // [data]
             help: help,
-            importPrivKey: importPrivKey, // <paycoinprivkey> [label]
+            importPrivKey: importPrivKey, // <trustprivkey> [label]
             keyPoolRefill: keyPoolRefill,
             listAccounts: listAccounts,
             listAddressGroupings: listAddressGroupings,
@@ -45,19 +45,19 @@ angular.module('PaycoinRpiWallet')
             repairWallet: repairWallet,
             reserveBalance: reserveBalance,// [<reserve> [amount]]
             sendAlert: sendAlert, // <message> <privatekey> <minver> <maxver> <priority> <id> [cancelupto]
-            sendFrom: sendFrom, // <fromaccount> <topaycoinaddress> <amount> [minconf=1] [comment] [comment-to]
+            sendFrom: sendFrom, // <fromaccount> <totrustaddress> <amount> [minconf=1] [comment] [comment-to]
             sendMany: sendMany,//<fromaccount> {address:amount,...} [minconf=1] [comment]
             sendRawTransaction: sendRawTransaction, //<hex string> [checkinputs=0]
-            sendToAddress: sendToAddress,// <paycoinaddress> <amount> [comment] [comment-to]
-            setAccount: setAccount, //<paycoinaddress> <account>
+            sendToAddress: sendToAddress,// <trustaddress> <amount> [comment] [comment-to]
+            setAccount: setAccount, //<trustaddress> <account>
             setGenerate: setGenerate, // <generate> [genproclimit]
             setTxFee: setTxFee, //<amount>
-            signMessage: signMessage, //<paycoinaddress> <message>
+            signMessage: signMessage, //<trustaddress> <message>
             signRawTransaction: signRawTransaction, // <hex string> [{"txid":txid,"vout":n,"scriptPubKey":hex},...] [<privatekey1>,...] [sighashtype="ALL"]
             stop: stop,
             submitBlock: submitBlock, //<hex data> [optional-params-obj]
-            validateAddress: validateAddress, // <paycoinaddress>
-            verifyMessage: verifyMessage, // <paycoinaddress> <signature> <message>
+            validateAddress: validateAddress, // <trustaddress>
+            verifyMessage: verifyMessage, // <trustaddress> <signature> <message>
             walletLock: walletLock,
             walletPassphrase: walletPassphrase, // <passphrase> <timeout> [mintonly]
             walletPassphraseChange: walletPassphraseChange, // <oldpassphrase> <newpassphrase>
@@ -331,7 +331,7 @@ angular.module('PaycoinRpiWallet')
 
             var payload = {
                 index: service.serverIndex,
-                paycoinaddress: sendPayload.paycoinaddress,
+                trustaddress: sendPayload.trustaddress,
                 amount: sendPayload.amount
             };
 
